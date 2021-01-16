@@ -24,6 +24,7 @@
     "node": ">=8.0.0"
   },
   "dependencies": {
+    "@ant-design/icons": "^4.3.0",
     "@emotion/core": "^10.0.10",
     "@emotion/styled": "^10.0.12",
     "antd": "^4.10.2",
