@@ -4,12 +4,3 @@
 @text-color: #26145B;
 @text-color-secondary: fade(@text-color, 45%);
 @heading-color: auto;
-
-.title-loop (@i) when (@i > 0) {
-  h@{i} {
-    font-family: 'Cormorant Garamond', serif;;
-  }
-  .title-loop(@i - 1);
-}
-
-.title-loop(4);
