@@ -1,4 +1,6 @@
+import { ReactNode } from 'react'
+
 export type MenuOption = {
   name: string
-  icon: React.ForwardRefExoticComponent<any>
+  icon: ReactNode
 }
