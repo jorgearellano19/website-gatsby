@@ -57,6 +57,23 @@ module.exports = {
         siteUrl: 'https://gatsby-starter-typescript-plus.netlify.com'
       }
     },
+    {
+      resolve: 'gatsby-source-strapi',
+      options: {
+        apiURL: process.env.API_URL || 'http://localhost:1337',
+        contentTypes: [
+          // List of the Content Types you want to be able to request from Gatsby.
+          'user',
+          'category'
+        ],
+        singleTypes: ['landing-page'],
+        // Possibility to login with a strapi user, when content types are not publically available (optional).
+        loginData: {
+          identifier: '',
+          password: ''
+        }
+      }
+    },
     'gatsby-plugin-emotion',
     'gatsby-plugin-typescript',
     'gatsby-plugin-sharp',
