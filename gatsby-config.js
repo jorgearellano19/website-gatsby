@@ -74,6 +74,7 @@ module.exports = {
         }
       }
     },
+    'gatsby-plugin-scroll-reveal',
     'gatsby-plugin-emotion',
     'gatsby-plugin-typescript',
     'gatsby-plugin-sharp',
