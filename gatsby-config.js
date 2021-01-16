@@ -12,6 +12,14 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: 'gatsby-plugin-less',
+      options: {
+        lessOptions: {
+          javascriptEnabled: true
+        }
+      }
+    },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'content',
@@ -54,6 +62,7 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-antd'
+    'gatsby-plugin-antd',
+    'gatsby-plugin-sass'
   ]
 }
