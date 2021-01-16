@@ -1,7 +1,9 @@
-/**
- * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/ssr-apis/
- */
+/* eslint-disable react/jsx-filename-extension */
+const React = require('react')
+const Layout = require('./src/Layout').default
 
-// You can delete this file if you're not using it
+// eslint-disable-next-line react/prop-types
+export const wrapPageElement = ({ element, props }) => {
+  // eslint-disable-next-line react/jsx-props-no-spreading
+  return <Layout {...props}>{element}</Layout>
+}
