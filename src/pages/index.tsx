@@ -1,5 +1,9 @@
 import * as React from 'react'
+import { AppContext } from '../context/Application'
 
-const IndexPage = () => <div>This is a page</div>
+const IndexPage = () => {
+  const { language } = React.useContext(AppContext)
+  return <div>This is a page {language}</div>
+}
 
 export default IndexPage
