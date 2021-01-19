@@ -1,9 +1,11 @@
 import * as React from 'react'
+import Introduction from '../components/Introduction'
 import { AppContext } from '../context/Application'
 
-const IndexPage = () => {
-  const { language } = React.useContext(AppContext)
-  return <div>This is a page {language}</div>
-}
+const IndexPage = () => (
+  <>
+    <Introduction />
+  </>
+)
 
 export default IndexPage
