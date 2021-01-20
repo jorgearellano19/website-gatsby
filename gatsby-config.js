@@ -42,7 +42,7 @@ module.exports = {
           {
             resolve: 'gatsby-remark-images',
             options: {
-              maxWidth: 1140,
+              maxWidth: 1080,
               quality: 90,
               linkImagesToOriginal: false
             }
@@ -80,7 +80,7 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-antd',
-    'gatsby-plugin-sass'
+    'gatsby-plugin-sass',
+    'gatsby-plugin-scroll-reveal'
   ]
 }

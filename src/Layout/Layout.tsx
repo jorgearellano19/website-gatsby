@@ -11,7 +11,7 @@ const LayoutPage: React.FC = ({ children }) => (
     <Sidebar />
     <Layout>
       <Header />
-      <Content style={{ margin: '24px 16px 0' }}>{children}</Content>
+      <Content className={styles.content}>{children}</Content>
     </Layout>
   </Layout>
 )

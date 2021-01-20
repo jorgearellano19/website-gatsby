@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  align-items: center;
+  min-height: 100%;
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home {
+  margin: auto;
+}
+
+.button-container {
+  margin-top: 1.5rem;
+}
+
+.button {
+  border-radius: 30px;
+  padding: 12px 32px;
+  font-size: 16px;
+  height: auto;
+}
+
+.content {
+  margin-top: 24px;
+}
