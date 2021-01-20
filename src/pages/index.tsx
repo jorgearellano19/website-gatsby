@@ -4,8 +4,8 @@ import Introduction from '../components/Introduction'
 
 const IndexPage = () => (
   <>
-    {/* <Introduction /> */}
-    {/* <AboutMe /> */}
+    <Introduction />
+    <AboutMe />
   </>
 )
 
