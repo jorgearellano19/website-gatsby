@@ -7,13 +7,12 @@ import { Sidebar, Header } from '../components/Layout'
 const { Content, Footer } = Layout
 
 const LayoutPage: React.FC = ({ children }) => (
-  <Layout className={styles.container}>
-    <Sidebar />
-    <Layout>
-      <Header />
-      <Content style={{ margin: '24px 16px 0' }}>{children}</Content>
-    </Layout>
-  </Layout>
+  // <Layout className={styles.container}>
+  //   {/* <Sidebar /> */}
+  //   {/* <Header /> */}
+  //   {/* <Content className={styles.content}>{children}</Content> */}
+  // </Layout>
+  <div />
 )
 
 export default LayoutPage

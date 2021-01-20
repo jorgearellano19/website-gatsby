@@ -1,10 +1,11 @@
 import * as React from 'react'
+import AboutMe from '../components/AboutMe'
 import Introduction from '../components/Introduction'
-import { AppContext } from '../context/Application'
 
 const IndexPage = () => (
   <>
-    <Introduction />
+    {/* <Introduction /> */}
+    {/* <AboutMe /> */}
   </>
 )
 
