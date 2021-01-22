@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Col, Row, Select } from 'antd'
 import styles from './Skills.module.scss'
 import useResizeWidth from '../../hooks/useResizeWidth'
-import Skill from './Skill/Skill'
+import Skill from './Skill'
 
 const Skills: React.FC<{}> = () => {
   const { isMobile } = useResizeWidth()
@@ -17,7 +17,7 @@ const Skills: React.FC<{}> = () => {
         {SelectComponent}
         <Row>
           {mockArray.map((val, index) => (
-            <Col className={styles.skillContainer} xs={24} sm={12} md={8}>
+            <Col key={val} className={styles.skillContainer} xs={24} sm={12} md={8}>
               <Skill />
             </Col>
           ))}
