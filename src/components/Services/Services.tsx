@@ -18,7 +18,7 @@ const Services: React.FC<{}> = () => (
         ]}
       >
         {mockArray.map((val, index) => (
-          <Col xs={24} md={8}>
+          <Col key={val} xs={24} md={8}>
             <Service index={index + 1} />
           </Col>
         ))}
