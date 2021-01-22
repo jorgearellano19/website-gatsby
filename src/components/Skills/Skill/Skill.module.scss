@@ -1,0 +1,21 @@
+.container {
+  background-color: white;
+  border-radius: 20px;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // position:  absolute; TODO Use this absolute position when populating everything
+  // top: 0;
+  // left: 0;
+  // bottom: 0;
+  // right: 0;
+  // color: black;
+  // text-align: center;
+}
+
+.container:before {
+  content: "";
+  display: block;
+  padding-top: 100%; /* The padding depends on the width, not on the height, so with a padding-bottom of 100% you will get a square */
+}
