@@ -1,5 +1,6 @@
 import * as React from 'react'
 import AboutMe from '../components/AboutMe'
+import ContactMe from '../components/ContactMe'
 import Experience from '../components/Experience/Experience'
 import Introduction from '../components/Introduction'
 import Reviews from '../components/Reviews/Reviews'
@@ -14,6 +15,7 @@ const IndexPage = () => (
     <Experience />
     <Skills />
     <Reviews />
+    <ContactMe />
   </>
 )
 
