@@ -4,9 +4,22 @@ import styles from './Reviews.module.scss'
 import Review from './Review'
 
 const mockArray = [
-  ({ style }) => <animated.div style={{ ...style, willChange: 'transform, opacity' }}>Container 1</animated.div>,
-  ({ style }) => <animated.div style={{ ...style }}>Container 2</animated.div>,
-  ({ style }) => <animated.div style={{ ...style }}>Container 3</animated.div>
+  ({ style }) => (
+    <animated.div style={{ ...style }}>
+      {' '}
+      <Review />{' '}
+    </animated.div>
+  ),
+  ({ style }) => (
+    <animated.div style={{ ...style }}>
+      <Review />
+    </animated.div>
+  ),
+  ({ style }) => (
+    <animated.div style={{ ...style }}>
+      <Review />
+    </animated.div>
+  )
 ]
 
 const Reviews: React.FC<{}> = () => {
