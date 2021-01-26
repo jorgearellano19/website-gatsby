@@ -1,9 +1,15 @@
-import { GatsbyImageProps } from 'gatsby-image'
+import { GatsbyImageFixedProps, GatsbyImageFluidProps, GatsbyImageProps } from 'gatsby-image'
 import { ReactNode } from 'react'
 
 export enum languages {
   es = 'es',
   en = 'en'
+}
+
+export enum SocialMediaTypes {
+  linkedIn = 'LINKEDIN',
+  github = 'GITHUB',
+  twitter = 'TWITTER'
 }
 
 export type MenuOption = {
@@ -26,10 +32,21 @@ export type HomePage = {
   name: string
   aboutMe_es: string
   aboutMe_en: string
-  image: ImageSharp
+  image: ImageSharpFixed
+  socialMedia: SocialMedia[]
 }
 
-export type ImageSharp = {
+export type SocialMedia = {
+  type: SocialMediaTypes
+  link: string
+}
+
+export type ImageSharpFluid = {
   id: string
-  childImageSharp: GatsbyImageProps
+  childImageSharp: GatsbyImageFluidProps
+}
+
+export type ImageSharpFixed = {
+  id: string
+  childImageSharp: GatsbyImageFixedProps
 }

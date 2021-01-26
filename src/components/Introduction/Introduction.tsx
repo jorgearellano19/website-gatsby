@@ -15,13 +15,12 @@ type Props = {
 
 const Introduction: React.FC<Props> = ({ strapiHome }) => {
   const { language } = useContext(AppContext)
-  console.log(PRINCIPAL_PHRASE_PREFIX)
   const principalPhrase = getTranslation(strapiHome, language, PRINCIPAL_PHRASE_PREFIX)
   return (
     <section className={classes.container}>
-      <div data-sal="slide-up" data-sal-duration="1000" data-sal-delay="300" data-sal-easing="ease" className={classes.home}>
-        <Info aboutMe={principalPhrase} name={strapiHome.name} />
-        <SocialMedia />
+      <div data-sal="slide-up" data-sal-duration="1500" data-sal-delay="500" data-sal-easing="ease" className={classes.home}>
+        <Info image={strapiHome.image} aboutMe={principalPhrase} name={strapiHome.name} />
+        <SocialMedia socialMediaArray={strapiHome.socialMedia} />
         <div className={classes.buttonContainer}>
           <Button className={classes.button} color="primary">
             {t.introduction.contactMeButton[language]}

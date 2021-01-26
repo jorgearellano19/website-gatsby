@@ -20,10 +20,14 @@ export const pageQuery = graphql`
       image {
         id
         childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid_withWebp
+          fixed(width: 150, height: 150) {
+            ...GatsbyImageSharpFixed_withWebp
           }
         }
+      }
+      socialMedia {
+        link
+        type
       }
     }
   }
