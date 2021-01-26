@@ -42,7 +42,14 @@ const menuItems: Array<MenuOption> = [
 ]
 
 const Sidebar: React.FC<{}> = () => (
-  <Sider theme="dark" className={classes.sidebar} width={100} breakpoint="lg" collapsedWidth="0">
+  <Sider
+    style={{ position: 'fixed', height: '100vh' }}
+    theme="dark"
+    className={classes.sidebar}
+    width={100}
+    breakpoint="lg"
+    collapsedWidth="0"
+  >
     <div className={classes.container}>
       <div> LOGO </div>
       <Menu>
