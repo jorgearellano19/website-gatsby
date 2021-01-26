@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 module.exports = {
   siteMetadata: {
     title: 'gatsby-starter-typescript-plus',
@@ -19,13 +21,13 @@ module.exports = {
         }
       }
     },
-    // {
-    //   resolve: 'gatsby-source-filesystem',
-    //   options: {
-    //     name: 'content',
-    //     path: `${__dirname}/src/content`
-    //   }
-    // },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'content',
+        path: `${__dirname}/src/assets`
+      }
+    },
     {
       resolve: 'gatsby-transformer-remark',
       options: {
@@ -57,23 +59,21 @@ module.exports = {
         siteUrl: 'https://gatsby-starter-typescript-plus.netlify.com'
       }
     },
-    // {
-    //   resolve: 'gatsby-source-strapi',
-    //   options: {
-    //     apiURL: process.env.API_URL || 'http://localhost:1337',
-    //     contentTypes: [
-    //       // List of the Content Types you want to be able to request from Gatsby.
-    //       'user',
-    //       'category'
-    //     ],
-    //     singleTypes: ['landing-page'],
-    //     // Possibility to login with a strapi user, when content types are not publically available (optional).
-    //     loginData: {
-    //       identifier: '',
-    //       password: ''
-    //     }
-    //   }
-    // },
+    {
+      resolve: 'gatsby-source-strapi',
+      options: {
+        apiURL: process.env.API_URL || 'http://localhost:1337',
+        contentTypes: [
+          // List of the Content Types you want to be able to request from Gatsby.
+        ],
+        singleTypes: ['home'],
+        // Possibility to login with a strapi user, when content types are not publically available (optional).
+        loginData: {
+          identifier: process.env.GATSBY_STRAPI_EMAIL,
+          password: process.env.GATSBY_STRAPI_PWD
+        }
+      }
+    },
     'gatsby-plugin-scroll-reveal',
     'gatsby-plugin-emotion',
     'gatsby-plugin-typescript',
