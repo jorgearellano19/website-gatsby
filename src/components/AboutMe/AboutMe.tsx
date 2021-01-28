@@ -18,8 +18,9 @@ type Props = {
 
 const AboutMe: React.FC<Props> = ({ strapiHome }) => {
   const { language } = useContext(AppContext)
-  const { image } = strapiHome
+  const { image, services } = strapiHome
   const aboutMe = getTranslation(strapiHome, language, ABOUT_ME_PREFIX)
+  const cvButtonText = t.aboutMe.cvButton[language] as string
   return (
     <section>
       <div className={styles.container}>
@@ -32,7 +33,7 @@ const AboutMe: React.FC<Props> = ({ strapiHome }) => {
               <AvatarContainer image={image} />
             </Col>
             <Col className={styles.aboutMeContainer} md={18} xs={24}>
-              <Description />
+              <Description services={services} cvButtonText={cvButtonText} aboutMe={aboutMe} />
             </Col>
           </Row>
           <Numbers />
