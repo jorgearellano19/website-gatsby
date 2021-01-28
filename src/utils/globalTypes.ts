@@ -12,6 +12,12 @@ export enum SocialMediaTypes {
   twitter = 'TWITTER'
 }
 
+export enum expertise {
+  junior = 'junior',
+  mid = 'mid',
+  senior = 'senior'
+}
+
 export type MenuOption = {
   name: string
   icon: ReactNode
@@ -34,6 +40,7 @@ export type HomePage = {
   aboutMe_en: string
   image: ImageSharpFixed
   socialMedia: SocialMedia[]
+  services: Service[]
 }
 
 export type SocialMedia = {
@@ -49,4 +56,9 @@ export type ImageSharpFluid = {
 export type ImageSharpFixed = {
   id: string
   childImageSharp: GatsbyImageFixedProps
+}
+
+export type Service = {
+  name: string
+  level: expertise
 }

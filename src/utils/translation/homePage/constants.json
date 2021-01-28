@@ -4,5 +4,15 @@
       "es": "¡Contáctame!",
       "en": "Contact me!"
     }
+  },
+  "aboutMe": {
+    "title": {
+      "es": "Acerca de mi",
+      "en": "About me"
+    },
+    "cvButton": {
+      "en": "Download my CV!",
+      "es": "¡Descarga mi CV!"
+    }
   }
 }

@@ -29,6 +29,10 @@ export const pageQuery = graphql`
         link
         type
       }
+      services {
+        name
+        level
+      }
     }
   }
 `
@@ -38,10 +42,11 @@ type Props = {
 }
 
 const IndexPage: React.FC<Props> = ({ data: { strapiHome } }) => {
+  console.log(strapiHome)
   return (
     <>
       <Introduction strapiHome={strapiHome} />
-      <AboutMe />
+      <AboutMe strapiHome={strapiHome} />
       <Services />
       <Experience />
       <Skills />
