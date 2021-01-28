@@ -41,7 +41,7 @@ const IndexPage: React.FC<Props> = ({ data: { strapiHome } }) => {
   return (
     <>
       <Introduction strapiHome={strapiHome} />
-      <AboutMe />
+      <AboutMe strapiHome={strapiHome} />
       <Services />
       <Experience />
       <Skills />
