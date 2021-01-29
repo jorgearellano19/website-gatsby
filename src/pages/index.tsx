@@ -17,6 +17,10 @@ export const pageQuery = graphql`
       name
       aboutMe_es
       aboutMe_en
+      hoursCoded
+      glassesOfWater
+      happyClients
+      projects
       image {
         id
         childImageSharp {

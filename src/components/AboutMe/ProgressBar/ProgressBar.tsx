@@ -17,7 +17,7 @@ const ProgressBar: React.FC<Props> = ({ service: { name, level } }) => (
       <Typography> {name} </Typography>
     </div>
     <div>
-      <Progress success={{ percent: 90 }} percent={percent[level]} />
+      <Progress success={{ percent: percent[level] }} percent={percent[level]} />
     </div>
   </div>
 )

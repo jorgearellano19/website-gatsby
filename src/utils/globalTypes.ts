@@ -41,6 +41,10 @@ export type HomePage = {
   image: ImageSharpFixed
   socialMedia: SocialMedia[]
   services: Service[]
+  hoursCoded: number
+  glassesOfWater: number
+  happyClients: number
+  projects: number
 }
 
 export type SocialMedia = {
