@@ -18,6 +18,12 @@ export enum expertise {
   senior = 'senior'
 }
 
+export enum servicesEnum {
+  frontend = 'frontend',
+  backend = 'backend',
+  devops = 'devops'
+}
+
 export type MenuOption = {
   name: string
   icon: ReactNode
@@ -68,6 +74,7 @@ export type ImageSharpFixed = {
 }
 
 export type Service = {
+  slug: servicesEnum
   name: string
   level: expertise
   description_es: string

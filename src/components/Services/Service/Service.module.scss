@@ -1,15 +1,24 @@
 .container {
   padding: 30px;
-  height: 250px;
   border-radius: 20px;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100%;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    transform: translateY(-15px);
+  }
+
 }
 
 .image-container {
   margin-bottom: 20px;
+
+  span {
+    width: 80px;
+  }
 }
 
 .title-container {
