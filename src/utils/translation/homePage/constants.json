@@ -13,6 +13,24 @@
     "cvButton": {
       "en": "Download my CV!",
       "es": "¡Descarga mi CV!"
+    },
+    "stats": {
+      "hoursCoded": {
+        "en": "Hours of code",
+        "es": "Horas de código"
+      },
+      "happyClients": {
+        "en": "Happy Clients!",
+        "es": "Clientes Felices"
+      },
+      "coffee": {
+        "en": "Cups of Coffee",
+        "es": "Tazas de Café"
+      },
+      "projects": {
+        "en": "Developed projects",
+        "es": "Proyectos realizados"
+      }
     }
   }
 }
