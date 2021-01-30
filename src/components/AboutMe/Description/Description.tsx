@@ -13,7 +13,6 @@ type Props = {
 }
 const Description: React.FC<Props> = ({ aboutMe, cvButtonText, services, cv }) => {
   const downloadCV = () => {
-    console.log(cv)
     if (typeof window !== 'undefined') {
       window.open(cv.publicURL, '_blank')
     }
