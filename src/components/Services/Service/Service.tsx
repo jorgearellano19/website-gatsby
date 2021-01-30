@@ -1,29 +1,50 @@
+import Icon from '@ant-design/icons'
+import { Typography } from 'antd'
 import * as React from 'react'
+import { FrontendIcon, BackendIcon, DevopsIcon } from '../../../assets/icons'
+import { AppContext } from '../../../context/Application'
+import { Service, servicesEnum } from '../../../utils/globalTypes'
+import { getTranslation } from '../../../utils/language'
+import { DESCRIPTION_SERVICE_PREFIX } from '../../../utils/translation/homePage/keys'
 import styles from './Service.module.scss'
 
-type ServiceProps = {
-  index: number
-}
+const { Title, Text } = Typography
 
-const getBackgroundService = (index: number) => {
-  switch (index % 3) {
-    case 0:
+const getBackgroundService = (slug: servicesEnum) => {
+  switch (slug) {
+    case servicesEnum.backend:
       return 'rgb(108, 108, 229)'
-    case 1:
+    case servicesEnum.frontend:
       return 'rgb(249, 215, 76)'
+    case servicesEnum.devops:
+      return 'rgb(249, 123, 139)'
     default:
       return 'rgb(249, 123, 139)'
   }
 }
 
-const Service: React.FC<ServiceProps> = ({ index }) => (
-  <div style={{ backgroundColor: getBackgroundService(index) }} className={styles.container}>
-    <div className={styles.imageContainer}>Image container</div>
-    <div className={styles.imageContainer}>
-      <h2>Title</h2>
-    </div>
-    <div>Description</div>
-  </div>
-)
+type Props = {
+  service: Service
+}
 
-export default Service
+const icons = {
+  [servicesEnum.frontend]: <FrontendIcon />,
+  [servicesEnum.backend]: <BackendIcon />,
+  [servicesEnum.devops]: <DevopsIcon />
+}
+
+const ServiceComponent: React.FC<Props> = ({ service }) => {
+  const { language } = React.useContext(AppContext)
+  const description = getTranslation(service, language, DESCRIPTION_SERVICE_PREFIX)
+  return (
+    <div style={{ backgroundColor: getBackgroundService(service.slug) }} className={styles.container}>
+      <div className={styles.imageContainer}>{icons[service.slug]}</div>
+      <div className={styles.imageContainer}>
+        <Title level={2}>{service.name}</Title>
+      </div>
+      <Text>{description}</Text>
+    </div>
+  )
+}
+
+export default ServiceComponent

@@ -32,5 +32,11 @@
         "es": "Proyectos realizados"
       }
     }
+  },
+  "services": {
+    "title": {
+      "en": "Services",
+      "es": "Servicios"
+    }
   }
 }

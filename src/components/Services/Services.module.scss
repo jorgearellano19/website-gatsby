@@ -6,3 +6,9 @@
   padding-right: 15px;
   max-width: 1080px;
 }
+
+.service-container {
+  @media (max-width: 768px) {
+    margin-bottom: 1rem;
+  }
+}

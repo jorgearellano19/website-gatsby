@@ -21,6 +21,9 @@ export const pageQuery = graphql`
       glassesOfWater
       happyClients
       projects
+      cv {
+        publicURL
+      }
       image {
         id
         childImageSharp {
@@ -36,6 +39,9 @@ export const pageQuery = graphql`
       services {
         name
         level
+        description_es
+        description_en
+        slug
       }
     }
   }
@@ -51,7 +57,7 @@ const IndexPage: React.FC<Props> = ({ data: { strapiHome } }) => {
     <>
       <Introduction strapiHome={strapiHome} />
       <AboutMe strapiHome={strapiHome} />
-      <Services />
+      <Services services={strapiHome.services} />
       <Experience />
       <Skills />
       <Reviews />

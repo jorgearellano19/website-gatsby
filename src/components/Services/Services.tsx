@@ -1,30 +1,40 @@
-import { Col, Row } from 'antd'
+import { Col, Row, Typography } from 'antd'
 import * as React from 'react'
-import Service from './Service'
+import { Service } from '../../utils/globalTypes'
+import ServiceComponent from './Service'
 import styles from './Services.module.scss'
+import t from '../../utils/translation/homePage/constants.json'
+import { AppContext } from '../../context/Application'
 
-const mockArray = [0, 1, 2]
+const { Title } = Typography
 
-const Services: React.FC<{}> = () => (
-  <section>
-    <div className={styles.container}>
-      <div>
-        <h1>Services</h1>
+type Props = {
+  services: Service[]
+}
+
+const Services: React.FC<Props> = ({ services }) => {
+  const { language } = React.useContext(AppContext)
+  return (
+    <section>
+      <div className={styles.container}>
+        <div data-sal="slide-up" data-sal-duration="1000" data-sal-delay="200" data-sal-easing="ease">
+          <Title>{t.services.title[language]}</Title>
+        </div>
+        <Row
+          gutter={[
+            { xs: 40, md: 50 },
+            { xs: 40, md: 50 }
+          ]}
+        >
+          {services.map(service => (
+            <Col className={styles.serviceContainer} key={service.slug} xs={24} md={8}>
+              <ServiceComponent service={service} />
+            </Col>
+          ))}
+        </Row>
       </div>
-      <Row
-        gutter={[
-          { xs: 40, md: 50 },
-          { xs: 40, md: 50 }
-        ]}
-      >
-        {mockArray.map((val, index) => (
-          <Col key={val} xs={24} md={8}>
-            <Service index={index + 1} />
-          </Col>
-        ))}
-      </Row>
-    </div>
-  </section>
-)
+    </section>
+  )
+}
 
 export default Services
