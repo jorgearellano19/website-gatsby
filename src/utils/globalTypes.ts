@@ -45,6 +45,11 @@ export type HomePage = {
   glassesOfWater: number
   happyClients: number
   projects: number
+  cv: DownloadableFile
+}
+
+export type DownloadableFile = {
+  publicURL: string
 }
 
 export type SocialMedia = {
@@ -65,4 +70,6 @@ export type ImageSharpFixed = {
 export type Service = {
   name: string
   level: expertise
+  description_es: string
+  description_en: string
 }

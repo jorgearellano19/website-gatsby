@@ -21,6 +21,9 @@ export const pageQuery = graphql`
       glassesOfWater
       happyClients
       projects
+      cv {
+        publicURL
+      }
       image {
         id
         childImageSharp {
@@ -36,6 +39,8 @@ export const pageQuery = graphql`
       services {
         name
         level
+        description_es
+        description_en
       }
     }
   }
