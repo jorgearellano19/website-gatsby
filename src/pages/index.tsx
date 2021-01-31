@@ -43,6 +43,22 @@ export const pageQuery = graphql`
         description_en
         slug
       }
+      educationalExperience {
+        carreer_es
+        carreer_en
+        endDate
+        startDate
+        shortDescription_es
+        shortDescription_en
+      }
+      workExperiences {
+        isActualWork
+        company
+        shortDescription_en
+        shortDescription_es
+        startDate
+        endDate
+      }
     }
   }
 `
@@ -58,7 +74,7 @@ const IndexPage: React.FC<Props> = ({ data: { strapiHome } }) => {
       <Introduction strapiHome={strapiHome} />
       <AboutMe strapiHome={strapiHome} />
       <Services services={strapiHome.services} />
-      <Experience />
+      <Experience works={strapiHome.workExperiences} educational={strapiHome.educationalExperience} />
       <Skills />
       <Reviews />
       <ContactMe />
