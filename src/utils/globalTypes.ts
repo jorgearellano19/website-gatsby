@@ -24,6 +24,11 @@ export enum servicesEnum {
   devops = 'devops'
 }
 
+export enum timelineType {
+  educational = 'educational',
+  work = 'work'
+}
+
 export type MenuOption = {
   name: string
   icon: ReactNode
@@ -52,6 +57,29 @@ export type HomePage = {
   happyClients: number
   projects: number
   cv: DownloadableFile
+  educationalExperience: EducationalExperience
+  workExperiences: WorkExperience[]
+}
+
+export type EducationalExperience = {
+  carreer_es: string
+  carreer_en: string
+  endDate: string
+  startDate: string
+  shortDescription_es: string
+  shortDescription_en: string
+}
+
+export type WorkExperience = {
+  startDate: string
+  title: string
+  company: string
+  isActualWork: boolean
+  longDescription_en: string
+  longDescription_es: string
+  shortDescription_en: string
+  shortDescription_es: string
+  endDate: string
 }
 
 export type DownloadableFile = {

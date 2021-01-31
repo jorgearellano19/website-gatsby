@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Layout, Switch } from 'antd'
 import { AppContext } from '../../../context/Application'
 import { languages } from '../../../utils/globalTypes'
@@ -7,7 +7,6 @@ import classes from './Header.module.scss'
 const { Header } = Layout
 const HeaderComponent: React.FC<{}> = () => {
   const { onChangeLanguage } = useContext(AppContext)
-
   const changeLanguage = (checked: boolean) => {
     return checked ? onChangeLanguage(languages.es) : onChangeLanguage(languages.en)
   }
