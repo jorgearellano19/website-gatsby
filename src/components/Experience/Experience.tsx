@@ -48,6 +48,7 @@ const Experience: React.FC<Props> = ({ educational, works }) => {
                 const description = getTranslation(work, language, SHORT_DESCRIPTION_PREFIX)
                 return (
                   <TimelineCustomItem
+                    key={work.company}
                     until={work.endDate}
                     since={work.startDate}
                     title={work.company}

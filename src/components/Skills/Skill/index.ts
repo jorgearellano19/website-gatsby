@@ -1,3 +1,3 @@
-import Skill from './Skill'
+import SkillComponent from './Skill'
 
-export default Skill
+export default SkillComponent
