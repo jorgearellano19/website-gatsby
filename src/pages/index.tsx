@@ -59,6 +59,19 @@ export const pageQuery = graphql`
         startDate
         endDate
       }
+      skills {
+        name
+        type
+        description_en
+        description_es
+        image {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+      }
     }
   }
 `
@@ -75,7 +88,7 @@ const IndexPage: React.FC<Props> = ({ data: { strapiHome } }) => {
       <AboutMe strapiHome={strapiHome} />
       <Services services={strapiHome.services} />
       <Experience works={strapiHome.workExperiences} educational={strapiHome.educationalExperience} />
-      <Skills />
+      <Skills skills={strapiHome.skills} />
       <Reviews />
       <ContactMe />
     </>

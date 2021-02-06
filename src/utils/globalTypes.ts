@@ -29,6 +29,14 @@ export enum timelineType {
   work = 'work'
 }
 
+export enum skillType {
+  frontend = 'Frontend',
+  backend = 'Backend',
+  devops = 'DevOps',
+  databases = 'Databases',
+  others = 'Others'
+}
+
 export type MenuOption = {
   name: string
   icon: ReactNode
@@ -59,6 +67,7 @@ export type HomePage = {
   cv: DownloadableFile
   educationalExperience: EducationalExperience
   workExperiences: WorkExperience[]
+  skills: Skill[]
 }
 
 export type EducationalExperience = {
@@ -80,6 +89,14 @@ export type WorkExperience = {
   shortDescription_en: string
   shortDescription_es: string
   endDate: string
+}
+
+export type Skill = {
+  type: skillType
+  image: ImageSharpFluid
+  description_es: string
+  description_en: string
+  name: string
 }
 
 export type DownloadableFile = {
