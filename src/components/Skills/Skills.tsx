@@ -1,16 +1,13 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 import * as React from 'react'
-import { Row, Select, Typography } from 'antd'
-import { useTransition, animated } from 'react-spring'
+import { Button, Select, Typography } from 'antd'
 import styles from './Skills.module.scss'
 import useResizeWidth from '../../hooks/useResizeWidth'
 import { Skill, skillType } from '../../utils/globalTypes'
-import layoutRect from '../../utils/layoutRect'
-import SkillContainer from './SkillContainer'
 import List from './List'
 
 const { Option } = Select
-const { Title } = Typography
+const { Title, Text } = Typography
 
 type Props = {
   skills: Skill[]
@@ -18,21 +15,28 @@ type Props = {
 
 const Skills: React.FC<Props> = ({ skills }) => {
   const { isMobile } = useResizeWidth()
-  const skillTypes = Object.keys(skillType)
+  const skillTypes = ['everything', ...Object.keys(skillType)]
   const [items, setItems] = React.useState(skills)
+  const [value, setValue] = React.useState('everything')
 
-  const onChange = (value: string) => {
-    if (value === 'everything') return setItems(skills)
-    const filtered = skills.filter(skill => skill.type === value)
-    console.log(filtered)
-    return setItems(filtered)
+  const onChange = (newValue: string) => {
+    setValue(() => {
+      if (newValue === 'everything') {
+        setItems(skills)
+      } else {
+        const filtered = skills.filter(skill => skill.type === newValue)
+        setItems(filtered)
+      }
+      return newValue
+    })
+  }
+
+  const setLinkColor = (skill: string) => {
+    return skill === value ? '#FF4C60' : '#FFF'
   }
 
   const SelectComponent = isMobile ? (
     <Select defaultValue="everything" onChange={onChange} style={{ width: '100%', color: 'black' }} className={styles.select}>
-      <Option className={styles.option} value="everything">
-        Everything
-      </Option>
       {skillTypes.map(type => (
         <Option key={type} className={styles.option} value={type}>
           {type}
@@ -40,9 +44,16 @@ const Skills: React.FC<Props> = ({ skills }) => {
       ))}
     </Select>
   ) : (
-      <div>Links</div>
+      <div>
+        {skillTypes.map(skill => (
+          <Button type="text" onClick={() => onChange(skill)} style={{ color: setLinkColor(skill) }} className={styles.skillFilter}>
+            {skill}
+          </Button>
+        ))}
+      </div>
     )
 
+  console.log(items, value)
   return (
     <section>
       <div className={styles.container}>

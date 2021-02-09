@@ -18,8 +18,17 @@
 
 .option {
   color: black;
+  text-transform: capitalize;
 }
 
 .list {
   position: relative;
+}
+
+.skill-filter {
+  margin-right: 1.8rem;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 700;
+  text-transform: capitalize;
 }
