@@ -1,4 +1,5 @@
-import { GatsbyImageFixedProps, GatsbyImageFluidProps, GatsbyImageProps } from 'gatsby-image'
+/* eslint-disable camelcase */
+import { GatsbyImageFixedProps, GatsbyImageFluidProps } from 'gatsby-image'
 import { ReactNode } from 'react'
 
 export enum languages {
@@ -68,6 +69,7 @@ export type HomePage = {
   educationalExperience: EducationalExperience
   workExperiences: WorkExperience[]
   skills: Skill[]
+  reviews: Review[]
 }
 
 export type EducationalExperience = {
@@ -124,4 +126,13 @@ export type Service = {
   level: expertise
   description_es: string
   description_en: string
+}
+
+export type Review = {
+  name: string
+  position: string
+  company: string
+  message_en: string
+  message_es: string
+  img: ImageSharpFixed
 }
