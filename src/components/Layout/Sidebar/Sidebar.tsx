@@ -41,7 +41,12 @@ const menuItems: Array<MenuOption> = [
   }
 ]
 
-const Sidebar: React.FC<{}> = () => (
+type Props = {
+  onCollapse: (collapse: boolean, type: string) => void
+  collapsed: boolean
+}
+
+const Sidebar: React.FC<Props> = ({ onCollapse, collapsed }) => (
   <Sider
     style={{ position: 'fixed', height: '100vh' }}
     theme="dark"
@@ -49,6 +54,9 @@ const Sidebar: React.FC<{}> = () => (
     width={100}
     breakpoint="lg"
     collapsedWidth="0"
+    collapsible
+    collapsed={collapsed}
+    onCollapse={onCollapse}
   >
     <div className={classes.container}>
       <div> LOGO </div>

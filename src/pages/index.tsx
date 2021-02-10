@@ -72,6 +72,20 @@ export const pageQuery = graphql`
           }
         }
       }
+      reviews {
+        name
+        company
+        position
+        message_es
+        message_en
+        img {
+          childImageSharp {
+            fixed(width: 150, height: 150) {
+              ...GatsbyImageSharpFixed_withWebp
+            }
+          }
+        }
+      }
     }
   }
 `
@@ -89,7 +103,7 @@ const IndexPage: React.FC<Props> = ({ data: { strapiHome } }) => {
       <Services services={strapiHome.services} />
       <Experience works={strapiHome.workExperiences} educational={strapiHome.educationalExperience} />
       <Skills skills={strapiHome.skills} />
-      <Reviews />
+      <Reviews reviews={strapiHome.reviews} />
       <ContactMe />
     </>
   )

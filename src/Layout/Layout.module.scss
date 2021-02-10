@@ -7,8 +7,15 @@
 
 .content {
   overflow-x: hidden;
-
+  transition: all 0.3s ease-in-out;
   @media (min-width: 991px) {
     margin-left: 100px;
+  }
+}
+
+.content-collapsible {
+  overflow-x: hidden;
+  @media (max-width: 991px) {
+    transform: translateX(110px);
   }
 }

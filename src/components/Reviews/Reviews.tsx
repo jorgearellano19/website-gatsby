@@ -1,30 +1,18 @@
 import * as React from 'react'
 import { useTransition, animated } from 'react-spring'
+import { Typography } from 'antd'
 import styles from './Reviews.module.scss'
-import Review from './Review'
+import ReviewComponent from './Review'
+import { Review } from '../../utils/globalTypes'
 
-const mockArray = [
-  ({ style }) => (
-    <animated.div style={{ ...style }}>
-      {' '}
-      <Review />{' '}
-    </animated.div>
-  ),
-  ({ style }) => (
-    <animated.div style={{ ...style }}>
-      <Review />
-    </animated.div>
-  ),
-  ({ style }) => (
-    <animated.div style={{ ...style }}>
-      <Review />
-    </animated.div>
-  )
-]
+const { Title } = Typography
+type Props = {
+  reviews: Review[]
+}
 
-const Reviews: React.FC<{}> = () => {
+const Reviews: React.FC<Props> = ({ reviews }) => {
   const [index, set] = React.useState(0)
-  const onChange = () => set(state => (state + 1) % 3)
+  const onChange = () => set(state => (state + 1) % reviews.length)
   const transitions = useTransition(index, p => p, {
     from: { opacity: 0, transform: 'translate3d(100%,0,0)' },
     enter: { opacity: 1, transform: 'translate3d(0%,0,0)' },
@@ -41,12 +29,16 @@ const Reviews: React.FC<{}> = () => {
   return (
     <div className={styles.container}>
       <div>
-        <h1>Reviews</h1>
+        <Title level={1}>Opinions</Title>
       </div>
       <div className={styles.reviewsContainer}>
         {transitions.map(({ item, key, props }) => {
-          const ReviewItem = mockArray[item]
-          return <ReviewItem style={props} key={key} />
+          const review = reviews[item]
+          return (
+            <animated.div key={key} style={{ ...props }}>
+              <ReviewComponent review={review} />
+            </animated.div>
+          )
         })}
       </div>
     </div>

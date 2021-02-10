@@ -7,6 +7,13 @@
   max-width: 1080px;
 }
 
+.reviews-container {
+  position: relative;
+  max-width: 700px;
+  margin: auto;
+  margin-bottom: 300px;
+}
+
 .reviews-container div{
   will-change: transform, opacity;
 }

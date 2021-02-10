@@ -20,16 +20,12 @@ const List: React.FC<Props> = ({ skills }) => {
     setLayouts((prev: any) => ({ ...prev, [id]: rect }))
   }, [])
   const handleItemUnmounted = React.useCallback(id => { }, [])
-  let currentHeight = 0
   const transitions = useTransition(
     skills.map(skill => {
       const layout = layouts[skill.name]
       const style = {
         opacity: 1,
         display: 'block'
-      }
-      if (layout) {
-        currentHeight += layout.height
       }
       return { ...skill, ...style }
     }),
