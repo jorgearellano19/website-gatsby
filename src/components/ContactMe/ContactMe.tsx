@@ -1,17 +1,21 @@
-import { Col, Row } from 'antd'
+import { Col, Row, Typography } from 'antd'
 import * as React from 'react'
 import ContactForm from './Form'
 import styles from './ContactMe.module.scss'
+
+const { Title } = Typography
 
 const ContactMe: React.FC<{}> = () => (
   <section>
     <div className={styles.container}>
       <div>
-        <h1>Get in Touch</h1>
+        <Title level={1}>Get in Touch</Title>
       </div>
       <Row justify="center">
         <Col xs={24} md={8}>
-          Lets talk about everything! <br /> Dont like forms? Send me an email. 👋
+          <Typography>
+            Lets talk about everything! <br /> Dont like forms? Send me an email. 👋
+          </Typography>
         </Col>
         <Col xs={28} md={16}>
           <ContactForm />
